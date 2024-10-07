@@ -7,7 +7,7 @@
 
   tasks:
     - name: Create a VM from template
-      vmware.vmware_rest.vcenter_vm_guest_customization:
+      vmware.vmware_rest.vcenter_vm:
         hostname: "192.168.1.22"
         username: "Administrator@vsphere.local"
         password: "P@$$w0rd!@^eSk!20!24"
@@ -23,7 +23,7 @@
           num_cpus: 2
         networks:
           - name: "AliPortGroup"
-            ip: "192.168.89.55"
+            ip: "192.168.89.60"
             netmask: "255.255.255.0"
             gateway: "192.168.89.1"
             type: static
