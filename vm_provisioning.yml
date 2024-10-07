@@ -11,26 +11,25 @@
         vcenter_hostname: "192.168.1.22"
         vcenter_username: "Administrator@vsphere.local"
         vcenter_password: "P@$$w0rd!@^eSk!20!24"  # Consider using Ansible Vault for this
-        validate_certs: no
-        datacenter: "eSkyIT"
-        cluster: "C3: DT & BK"
+        vcenter_validate_certs: no
+        state: present
         name: "Ansible_VMlocaltest3"
-        template: "PostgreSQL"
-        state: present  # Change this to 'present'
-        folder: "/eSkyIT/vm"
+        source: "PostgreSQL"  # Use 'source' instead of 'template'
+        placement:
+          cluster: "C3: DT & BK"
+          datastore: "IBM-Storage"
         hardware:
-          memory_mb: 4096
-          num_cpus: 2
-        networks:
+          memory: 4096  # Use 'memory' instead of 'memory_mb'
+          cpu: 2  # Use 'cpu' instead of 'num_cpus'
+        nics:
           - name: "AliPortGroup"
             ip: "192.168.89.60"
             netmask: "255.255.255.0"
             gateway: "192.168.89.1"
             type: static
-        disk:
-          - size_gb: 100
+        disks:
+          - size: 100  # Use 'size' instead of 'size_gb'
             type: thin
-            datastore: "IBM-Storage"
       delegate_to: localhost
 
     - name: Power on the VM
@@ -38,7 +37,7 @@
         vcenter_hostname: "192.168.1.22"
         vcenter_username: "Administrator@vsphere.local"
         vcenter_password: "P@$$w0rd!@^eSk!20!24"  # Consider using Ansible Vault for this
-        validate_certs: no
+        vcenter_validate_certs: no
         vm: "Ansible_VMlocaltest3"
         state: poweredon  # This will power on the VM
       delegate_to: localhost
