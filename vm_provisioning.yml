@@ -19,8 +19,9 @@
           cluster: "C3: DT & BK"
           datastore: "IBM-Storage"
         cpu:
-          count: 2  # Use a dictionary with count for CPU
-        memory: 4096  # Specify memory directly in MB
+          count: 2  # CPU count as a dictionary
+        memory:
+          size_MiB: 4096  # Memory size as a dictionary
         nics:
           - name: "AliPortGroup"
             ip: "192.168.89.60"
