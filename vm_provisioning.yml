@@ -1,5 +1,4 @@
 ---
----
 - name: Create a VM on VMware vSphere
   hosts: localhost
   gather_facts: no
