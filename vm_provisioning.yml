@@ -3,11 +3,11 @@
   hosts: all
   gather_facts: no
   collections:
-    - community.vmware
+    - vmware.vmware_rest
 
   tasks:
     - name: Create a VM from template
-      community.vmware:
+      vmware.vmware_rest.vcenter_vm_guest_customization:
         hostname: "192.168.1.22"
         username: "Administrator@vsphere.local"
         password: "P@$$w0rd!@^eSk!20!24"
