@@ -18,8 +18,9 @@
         placement:
           cluster: "C3: DT & BK"
           datastore: "IBM-Storage"
-        cpu: 2  # Specify CPU directly
-        memory: 4096  # Specify memory directly
+        cpu:
+          count: 2  # Use a dictionary with count for CPU
+        memory: 4096  # Specify memory directly in MB
         nics:
           - name: "AliPortGroup"
             ip: "192.168.89.60"
