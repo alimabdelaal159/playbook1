@@ -22,6 +22,7 @@
           count: 2  # CPU count as a dictionary
         memory:
           size_MiB: 4096  # Memory size as a dictionary
+        guest_OS: "otherLinux64Guest"  # Set a valid guest OS type for your template
         nics:
           - name: "AliPortGroup"
             ip: "192.168.89.60"
@@ -31,6 +32,9 @@
         disks:
           - size: 100  # Size in GB
             type: thin
+        boot:
+          boot_devices:
+            - type: "HARD_DRIVE"  # Specify boot device
       delegate_to: localhost
 
     - name: Power on the VM
