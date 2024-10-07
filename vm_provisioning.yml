@@ -18,9 +18,8 @@
         placement:
           cluster: "C3: DT & BK"
           datastore: "IBM-Storage"
-        hardware:
-          memory: 4096  # Use 'memory' instead of 'memory_mb'
-          cpu: 2  # Use 'cpu' instead of 'num_cpus'
+        cpu: 2  # Specify CPU directly
+        memory: 4096  # Specify memory directly
         nics:
           - name: "AliPortGroup"
             ip: "192.168.89.60"
@@ -28,7 +27,7 @@
             gateway: "192.168.89.1"
             type: static
         disks:
-          - size: 100  # Use 'size' instead of 'size_gb'
+          - size: 100  # Size in GB
             type: thin
       delegate_to: localhost
 
