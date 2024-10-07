@@ -22,7 +22,7 @@
           count: 2  # CPU count as a dictionary
         memory:
           size_MiB: 4096  # Memory size as a dictionary
-        guest_OS: "otherLinux64Guest"  # Set a valid guest OS type for your template
+        guest_OS: "Red Hat Enterprise Linux 8 (64-bit)"  # Set a valid guest OS type for your template
         nics:
           - name: "AliPortGroup"
             ip: "192.168.89.60"
