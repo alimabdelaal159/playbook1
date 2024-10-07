@@ -1,0 +1,22 @@
+all:
+  hosts:
+    localhost:
+      ansible_connection: local
+      ansible_python_interpreter: /usr/bin/python3
+      vars:
+        vcenter_hostname: "192.168.1.22"
+        vcenter_username: "Administrator@vsphere.local"
+        vcenter_password: "P@$$w0rd!@^eSk!20!24"
+        datacenter_name: "vcsa.eskyit.lab"
+        cluster_name: "eSkyIT"
+        datastore_name: "IBM-Storage"
+        network_name: "AliPortGroup"
+        vm_name: "vmtest"
+        vm_template: "PostgreSQL"
+        vm_folder: "vmtest"
+        vm_memory: 4096
+        vm_vcpus: 2
+        vm_disk_size: 40
+        vm_ip: "192.168.89.50"
+        vm_mac: "00:50:56:xx:xx:xx"
+        pass_through_storage: "/vmfs/devices/disks/naa.xxxxxxxxxxx"
