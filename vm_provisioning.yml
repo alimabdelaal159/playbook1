@@ -8,16 +8,16 @@
   tasks:
     - name: Create a VM from template
       vmware.vmware_rest.vcenter_vm_guest_customization:
-        hostname: "{{ vcenter_hostname }}"
-        username: "{{ vcenter_username }}"
-        password: "{{ vcenter_password }}"
+        hostname: "192.168.1.22"
+        username: "Administrator@vsphere.local"
+        password: "P@$$w0rd!@^eSk!20!24"
         validate_certs: no
-        datacenter: "{{ vcenter_datacenter }}"
-        cluster: "{{ vcenter_cluster }}"
-        name: "Ansible_VMlocaltest"
+        datacenter: "eSkyIT"
+        cluster: "C3: DT & BK"
+        name: "Ansible_VMlocaltest3"
         template: "PostgreSQL"
         state: poweredon
-        folder: "/{{ vcenter_datacenter }}/vm"
+        folder: "/eSkyIT/vm"
         hardware:
           memory_mb: 4096
           num_cpus: 2
