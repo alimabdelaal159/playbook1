@@ -18,7 +18,7 @@
         placement:
           cluster: "C3: DT & BK"
           datastore: "IBM-Storage"
-          #folder: "/eSkyIT/vm"  # Specify the folder for the VM
+          folder: "test3"  # Specify the folder for the VM
         cpu:
           count: 2  # CPU count as a dictionary
         memory:
