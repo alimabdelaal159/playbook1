@@ -1,0 +1,10 @@
+- name: Test VMware connection
+  hosts: localhost
+  tasks:
+    - name: Ping the vSphere server
+      community.vmware.vmware_guest:
+        hostname: "192.168.1.22"
+        username: "Administrator@vsphere.local"
+        password: "P@$$w0rd!@^eSk!20!24"
+        validate_certs: no
+        state: query
