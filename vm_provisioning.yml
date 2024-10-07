@@ -10,13 +10,13 @@
       vmware.vmware_rest.vcenter_vm:
         vcenter_hostname: "192.168.1.22"
         vcenter_username: "Administrator@vsphere.local"
-        vcenter_password: "P@$$w0rd!@^eSk!20!24"
+        vcenter_password: "P@$$w0rd!@^eSk!20!24"  # Consider using Ansible Vault for this
         validate_certs: no
         datacenter: "eSkyIT"
         cluster: "C3: DT & BK"
         name: "Ansible_VMlocaltest3"
         template: "PostgreSQL"
-        state: poweredon
+        state: present  # Change this to 'present'
         folder: "/eSkyIT/vm"
         hardware:
           memory_mb: 4096
@@ -31,4 +31,14 @@
           - size_gb: 100
             type: thin
             datastore: "IBM-Storage"
+      delegate_to: localhost
+
+    - name: Power on the VM
+      vmware.vmware_rest.vcenter_vm_power:
+        vcenter_hostname: "192.168.1.22"
+        vcenter_username: "Administrator@vsphere.local"
+        vcenter_password: "P@$$w0rd!@^eSk!20!24"  # Consider using Ansible Vault for this
+        validate_certs: no
+        vm: "Ansible_VMlocaltest3"
+        state: poweredon  # This will power on the VM
       delegate_to: localhost
